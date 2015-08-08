@@ -35,7 +35,7 @@ public class ReadFile {
 		} catch (FileNotFoundException e) {
 			throw new IllegalArgumentException("File not found" + path);
 		} finally {
-			sc.close();
+			if (sc != null) sc.close();
 		}
 		
 		return lines;
